@@ -276,7 +276,19 @@ a {
 }
 .nav__links a:hover { opacity: 1; }
 
-.nav__cta {
+.nav__instagram {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.7;
+  transition: opacity var(--transition);
+}
+.nav__instagram:hover { opacity: 1; }
+.nav.scrolled .nav__instagram { color: var(--black); }
+
+
   font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.16em;
@@ -348,6 +360,10 @@ a {
   align-items: center;
   margin-bottom: 1.8rem;
   color: var(--white);
+}
+
+.hero__title--orange {
+  color: var(--orange);
 }
 
 .hero__title--italic {
@@ -432,6 +448,8 @@ a {
   text-transform: uppercase;
   color: var(--black);
 }
+.moments__title--black { color: var(--black); }
+.moments__title--orange { color: var(--orange); }
 .moments__title em {
   font-style: italic;
   color: var(--orange);
@@ -481,8 +499,77 @@ a {
   aspect-ratio: 16 / 11;
 }
 
-.moment-card:hover .moment-card__img {
-  transform: scale(1.04);
+/* ── Carousel ── */
+.moment-card__carousel {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.moment-card--large .moment-card__carousel {
+  aspect-ratio: 16 / 11;
+}
+
+.carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: var(--white);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel__btn--prev { left: 0.8rem; }
+.carousel__btn--next { right: 0.8rem; }
+
+.moment-card:hover .carousel__btn { opacity: 1; }
+.carousel__btn:hover { background: rgba(255,84,0,0.7); }
+
+/* Auto-play on hover */
+.moment-card__carousel::before,
+.moment-card__carousel::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.moment-card__carousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.35), transparent);
+}
+.moment-card__carousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.35), transparent);
+}
+.moment-card:hover .moment-card__carousel::before,
+.moment-card:hover .moment-card__carousel::after {
+  opacity: 1;
 }
 
 .moment-card__caption {
@@ -542,6 +629,8 @@ a {
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
+.merch__title--black { color: var(--black); }
+.merch__title--orange { color: var(--orange); }
 .merch__title em {
   font-style: italic;
   color: var(--orange);
@@ -572,17 +661,44 @@ a {
   margin-top: 3rem;
 }
 
+.merch-item__img-wrap {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.merch-item__coming-soon {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+}
+
 .merch-item__img {
   aspect-ratio: 3 / 4;
   background-size: cover;
   background-position: center;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
-  margin-bottom: 1rem;
 }
 
-.merch-item:hover .merch-item__img {
-  transform: scale(1.03);
+.merch-item__img--blur {
+  filter: blur(8px) brightness(0.85);
+  transform: scale(1.06);
+}
+.merch-item:hover .merch-item__img--blur {
+  filter: blur(6px) brightness(0.9);
+  transform: scale(1.1);
 }
 
 .merch-item__name {

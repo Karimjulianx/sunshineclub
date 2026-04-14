@@ -28,7 +28,46 @@ document.querySelectorAll(
 });
 
 
-// ── Oracle quotes ─────────────────────────
+// ── Carousels ─────────────────────────────
+document.querySelectorAll('.moment-card__carousel').forEach(function(carousel) {
+  var track     = carousel.querySelector('.carousel__track');
+  var slides    = carousel.querySelectorAll('.carousel__slide');
+  var prevBtn   = carousel.querySelector('.carousel__btn--prev');
+  var nextBtn   = carousel.querySelector('.carousel__btn--next');
+  var total     = slides.length;
+  var current   = 0;
+  var autoTimer = null;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+  }
+
+  function startAuto() {
+    if (autoTimer) return;
+    autoTimer = setInterval(function() { goTo(current + 1); }, 1800);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+
+  carousel.addEventListener('mouseenter', startAuto);
+  carousel.addEventListener('mouseleave', stopAuto);
+
+  nextBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    goTo(current + 1);
+  });
+  prevBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    goTo(current - 1);
+  });
+});
+
+
+
 const quotes = {
   looking: [
     "Good. The best things happen to those who wander in without a plan.",

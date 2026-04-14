@@ -74,10 +74,8 @@
   --black:        #0d0d0d;
 
   /* ── Typography ── */
-  /* Headline: Agrandir Wide (fallback: Cabinet Grotesk Extra Bold, then Impact) */
-  --font-headline: 'Agrandir Wide', 'Cabinet Grotesk', 'Arial Black', Impact, sans-serif;
-  /* Body: Gotham (fallback: Montserrat, then Helvetica Neue) */
-  --font-body:     'Gotham', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-headline: 'Agrandir', 'Arial Black', Impact, sans-serif;
+  --font-body:     'Trueno', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -607,6 +605,63 @@ a {
   border-radius: 2px;
   font-size: 0.9em;
 }
+
+.moments__grid--two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.moment-card--half { grid-column: auto; }
+
+/* ── Merch available tag + carousel + cta link ── */
+.merch-item--available .merch-item__img-wrap {
+  position: relative;
+}
+.merch-item__available-tag {
+  position: absolute;
+  top: 1rem;
+  left: 0; right: 0;
+  z-index: 2;
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+}
+.merch-item__carousel {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+.merch-item__carousel .carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.merch-item__carousel .carousel__slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.merch-item--available:hover .carousel__btn { opacity: 1; }
+
+.merch-item__cta {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border-bottom: 1px solid var(--orange);
+  padding-bottom: 1px;
+  transition: opacity var(--transition);
+}
+.merch-item__cta:hover { opacity: 0.6; }
 
 /* =========================================
    MERCH

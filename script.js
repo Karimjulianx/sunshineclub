@@ -28,8 +28,8 @@ document.querySelectorAll(
 });
 
 
-// ── Carousels ─────────────────────────────
-document.querySelectorAll('.moment-card__carousel').forEach(function(carousel) {
+// ── Carousels (moments + merch) ───────────
+document.querySelectorAll('.moment-card__carousel, .merch-item__carousel').forEach(function(carousel) {
   var track     = carousel.querySelector('.carousel__track');
   var slides    = carousel.querySelectorAll('.carousel__slide');
   var prevBtn   = carousel.querySelector('.carousel__btn--prev');

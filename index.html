@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunshine Club — Vienna</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,900&display=swap" rel="stylesheet" />
+  <!-- Self-hosted fonts -->
+  <link rel="stylesheet" href="fonts.css" />
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="https://instagram.com" target="_blank" class="nav__instagram">INSTAGRAM ↗</a>
+    <a href="https://www.instagram.com/sunshine___club/" target="_blank" class="nav__instagram">INSTAGRAM ↗</a>
     <div class="nav__logo">SC</div>
     <ul class="nav__links">
       <li><a href="#moments">Moments</a></li>
@@ -64,16 +62,16 @@
           <div class="carousel__track">
             <div class="carousel__slide" style="background-color:#1a1a1a;"></div>
             <div class="carousel__slide" style="background-color:#2a2520;"></div>
-            <div class="carousel__slide" style="background-color:#3a3028;"></div>
             <div class="carousel__slide" style="background-color:#1e1c18;"></div>
             <div class="carousel__slide" style="background-color:#252020;"></div>
+            <div class="carousel__slide" style="background-color:#201e1a;"></div>
           </div>
           <button class="carousel__btn carousel__btn--prev">&#8592;</button>
           <button class="carousel__btn carousel__btn--next">&#8594;</button>
         </div>
         <div class="moment-card__caption">
-          <p class="moment-card__tag">After Hours</p>
-          <p class="moment-card__text">Some rooms stay warm long after the music stops.</p>
+          <p class="moment-card__tag">Vol. 2 · 2026</p>
+          <p class="moment-card__text">Treasure &amp; Sunshine Hunt</p>
         </div>
       </div>
 
@@ -90,8 +88,8 @@
           <button class="carousel__btn carousel__btn--next">&#8594;</button>
         </div>
         <div class="moment-card__caption">
-          <p class="moment-card__tag">Pride Eve</p>
-          <p class="moment-card__text">The night before everything changes.</p>
+          <p class="moment-card__tag">Vol. 1 · 2026</p>
+          <p class="moment-card__text">Valentines Edition</p>
         </div>
       </div>
 
@@ -108,8 +106,8 @@
           <button class="carousel__btn carousel__btn--next">&#8594;</button>
         </div>
         <div class="moment-card__caption">
-          <p class="moment-card__tag">Golden Hour</p>
-          <p class="moment-card__text">You were there. That's enough.</p>
+          <p class="moment-card__tag">Vol. 5 · 2025</p>
+          <p class="moment-card__text">Sparkle Season</p>
         </div>
       </div>
 
@@ -126,8 +124,8 @@
           <button class="carousel__btn carousel__btn--next">&#8594;</button>
         </div>
         <div class="moment-card__caption">
-          <p class="moment-card__tag">Community</p>
-          <p class="moment-card__text">Strangers who become something else entirely.</p>
+          <p class="moment-card__tag">Vol. 4 · 2025</p>
+          <p class="moment-card__text">Weinwandern</p>
         </div>
       </div>
 
@@ -144,8 +142,49 @@
           <button class="carousel__btn carousel__btn--next">&#8594;</button>
         </div>
         <div class="moment-card__caption">
-          <p class="moment-card__tag">The Floor</p>
-          <p class="moment-card__text">Permission to exist, loudly.</p>
+          <p class="moment-card__tag">Vol. 3 · 2025</p>
+          <p class="moment-card__text">Midsummer Edition</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Second row: Vol 1 & 2 2025 -->
+    <div class="moments__grid moments__grid--two" style="margin-top:1.5rem;">
+
+      <div class="moment-card moment-card--half">
+        <div class="moment-card__carousel" data-index="0">
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-color:#e8d0c0;"></div>
+            <div class="carousel__slide" style="background-color:#f0d8c8;"></div>
+            <div class="carousel__slide" style="background-color:#ddc8b8;"></div>
+            <div class="carousel__slide" style="background-color:#f5ddd0;"></div>
+            <div class="carousel__slide" style="background-color:#e0caba;"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev">&#8592;</button>
+          <button class="carousel__btn carousel__btn--next">&#8594;</button>
+        </div>
+        <div class="moment-card__caption">
+          <p class="moment-card__tag">Vol. 2 · 2025</p>
+          <p class="moment-card__text">Pride Edition</p>
+        </div>
+      </div>
+
+      <div class="moment-card moment-card--half">
+        <div class="moment-card__carousel" data-index="0">
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-color:#ff5400;"></div>
+            <div class="carousel__slide" style="background-color:#ff6a20;"></div>
+            <div class="carousel__slide" style="background-color:#e84800;"></div>
+            <div class="carousel__slide" style="background-color:#ff7030;"></div>
+            <div class="carousel__slide" style="background-color:#cc4000;"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev">&#8592;</button>
+          <button class="carousel__btn carousel__btn--next">&#8594;</button>
+        </div>
+        <div class="moment-card__caption">
+          <p class="moment-card__tag">Vol. 1 · 2025</p>
+          <p class="moment-card__text">The Beginnings</p>
         </div>
       </div>
 
@@ -163,52 +202,69 @@
       <p class="merch__sub">Available on Instagram</p>
     </div>
     <div class="merch__grid">
+
+      <!-- Bag product — available -->
+      <div class="merch-item merch-item--available">
+        <div class="merch-item__img-wrap">
+          <div class="merch-item__available-tag">Available Now</div>
+          <div class="merch-item__carousel" data-index="0">
+            <div class="carousel__track">
+              <div class="carousel__slide" style="background-image:url('img/merch/bag-1.png'); background-size:cover; background-position:center;"></div>
+              <div class="carousel__slide" style="background-image:url('img/merch/bag-2.png'); background-size:cover; background-position:center;"></div>
+            </div>
+            <button class="carousel__btn carousel__btn--prev">&#8592;</button>
+            <button class="carousel__btn carousel__btn--next">&#8594;</button>
+          </div>
+        </div>
+        <div class="merch-item__info">
+          <p class="merch-item__name">A Bag Full of Sunshine</p>
+          <p class="merch-item__detail">Tote · Limited run · 2025</p>
+          <a href="https://www.instagram.com/sunshine___club/" target="_blank" class="merch-item__cta">Order via Instagram ↗</a>
+        </div>
+      </div>
+
+      <!-- Tank top — coming soon, model shot -->
+      <div class="merch-item merch-item--offset">
+        <div class="merch-item__img-wrap">
+          <div class="merch-item__coming-soon">Coming Soon</div>
+          <div class="merch-item__img" style="background-image:url('img/merch/tank-top-model.png'); background-size:cover; background-position:center top; filter:blur(3px) brightness(0.9); transform:scale(1.06);"></div>
+        </div>
+        <div class="merch-item__info">
+          <p class="merch-item__name">SC Tank Top</p>
+          <p class="merch-item__detail">Rhinestone · Pre-Pride Edition</p>
+        </div>
+      </div>
+
+      <!-- Tank top flat — coming soon -->
       <div class="merch-item">
         <div class="merch-item__img-wrap">
           <div class="merch-item__coming-soon">Coming Soon</div>
-          <div class="merch-item__img merch-item__img--blur" style="background-color:#e0d8cc;"></div>
+          <div class="merch-item__img" style="background-image:url('img/merch/tank-top-flat.png'); background-size:cover; background-position:center; filter:blur(3px) brightness(0.92); transform:scale(1.06);"></div>
         </div>
         <div class="merch-item__info">
-          <p class="merch-item__name">SC Tote</p>
-          <p class="merch-item__detail">Limited run · 2025</p>
+          <p class="merch-item__name">SC Tank Top</p>
+          <p class="merch-item__detail">Flat lay view</p>
         </div>
       </div>
+
+      <!-- Placeholder 4 -->
       <div class="merch-item merch-item--offset">
         <div class="merch-item__img-wrap">
           <div class="merch-item__coming-soon">Coming Soon</div>
           <div class="merch-item__img merch-item__img--blur" style="background-color:#1a1814;"></div>
         </div>
         <div class="merch-item__info">
-          <p class="merch-item__name">SC Tee</p>
-          <p class="merch-item__detail">Pre-Pride Edition</p>
+          <p class="merch-item__name">More drops</p>
+          <p class="merch-item__detail">Stay tuned · 2025</p>
         </div>
       </div>
-      <div class="merch-item">
-        <div class="merch-item__img-wrap">
-          <div class="merch-item__coming-soon">Coming Soon</div>
-          <div class="merch-item__img merch-item__img--blur" style="background-color:#c8b890;"></div>
-        </div>
-        <div class="merch-item__info">
-          <p class="merch-item__name">SC Cap</p>
-          <p class="merch-item__detail">Unstructured · One size</p>
-        </div>
-      </div>
-      <div class="merch-item merch-item--offset">
-        <div class="merch-item__img-wrap">
-          <div class="merch-item__coming-soon">Coming Soon</div>
-          <div class="merch-item__img merch-item__img--blur" style="background-color:#f0ebe0;"></div>
-        </div>
-        <div class="merch-item__info">
-          <p class="merch-item__name">SC Hoodie</p>
-          <p class="merch-item__detail">Heavyweight · S–XL</p>
-        </div>
-      </div>
+
     </div>
     <div class="merch__cta">
-      <a href="https://instagram.com" target="_blank" class="btn btn--primary">
+      <a href="https://www.instagram.com/sunshine___club/" target="_blank" class="btn btn--primary">
         Shop via Instagram ↗
       </a>
-      <p class="merch__disclaimer">DM us or visit our Instagram to order.</p>
+      <p class="merch__disclaimer">DM us or visit @sunshine___club on Instagram to order.</p>
     </div>
   </section>
 
@@ -299,7 +355,7 @@
       <p class="footer__logo">Sunshine Club</p>
       <p class="footer__tagline">VIENNA · EST. 2025</p>
       <div class="footer__links">
-        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/sunshine___club/" target="_blank">Instagram</a>
         <a href="https://eventbrite.com" target="_blank">Tickets</a>
         <a href="mailto:hello@sunshineclub.at">Contact</a>
       </div>

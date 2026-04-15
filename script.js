@@ -239,3 +239,47 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     }
   });
 });
+
+
+// ── Previous Events Carousel ──────────────
+(function() {
+  var cards      = Array.from(document.querySelectorAll('.prev-card'));
+  var dotsWrap   = document.getElementById('previousDots');
+  var btnBack    = document.getElementById('prevCarouselBack');
+  var btnNext    = document.getElementById('prevCarouselNext');
+
+  if (!cards.length || !dotsWrap) return;
+
+  var perPage  = window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+  var pages    = Math.ceil(cards.length / perPage);
+  var current  = 0;
+
+  // Build dots
+  for (var i = 0; i < pages; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'prev-dot' + (i === 0 ? ' active' : '');
+    dot.dataset.page = i;
+    dotsWrap.appendChild(dot);
+  }
+
+  function show(page) {
+    current = (page + pages) % pages;
+    cards.forEach(function(c, idx) {
+      var inPage = idx >= current * perPage && idx < (current + 1) * perPage;
+      c.classList.toggle('active', inPage);
+    });
+    document.querySelectorAll('.prev-dot').forEach(function(d, idx) {
+      d.classList.toggle('active', idx === current);
+    });
+  }
+
+  show(0);
+
+  btnNext.addEventListener('click', function() { show(current + 1); });
+  btnBack.addEventListener('click', function() { show(current - 1); });
+
+  dotsWrap.addEventListener('click', function(e) {
+    var dot = e.target.closest('.prev-dot');
+    if (dot) show(parseInt(dot.dataset.page));
+  });
+})();

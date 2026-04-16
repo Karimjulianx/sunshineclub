@@ -359,7 +359,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.8rem;
-  color: var(--black);
+  color: var(--orange);
 }
 
 .hero__subline {

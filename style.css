@@ -250,9 +250,9 @@ a {
 
 .nav__logo {
   font-family: var(--font-headline);
-  font-size: 1rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--black);
 }
@@ -279,24 +279,26 @@ a {
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--white);
-  opacity: 0.7;
+  color: var(--black);
+  opacity: 0.55;
   transition: opacity var(--transition);
 }
 .nav__instagram:hover { opacity: 1; }
 .nav.scrolled .nav__instagram { color: var(--black); }
 
-
+.nav__cta {
   font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--orange);
-  border-bottom: 1.5px solid var(--orange);
-  padding-bottom: 1px;
+  color: var(--black);
+  opacity: 0.55;
   transition: opacity var(--transition);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  padding-bottom: 1px;
 }
-.nav__cta:hover { opacity: 0.6; }
+.nav__cta:hover { opacity: 1; }
+
 
 /* =========================================
    HERO
@@ -309,15 +311,15 @@ a {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: var(--black);
+  background-color: var(--white);
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 70% at 55% 45%, rgba(255, 84, 0, 0.18) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(0, 173, 204, 0.10) 0%, transparent 55%);
+    radial-gradient(ellipse 70% 60% at 55% 45%, rgba(255,84,0,0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(0,173,204,0.03) 0%, transparent 55%);
 }
 
 .hero__grain {
@@ -325,8 +327,8 @@ a {
   inset: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.7;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -342,7 +344,7 @@ a {
   font-size: 0.68rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: var(--gray-mid);
   margin-bottom: 1.8rem;
 }
 
@@ -357,16 +359,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.8rem;
-  color: var(--white);
-}
-
-.hero__title--orange {
-  color: var(--orange);
-}
-
-.hero__title--italic {
-  color: var(--orange);
-  font-style: italic;
+  color: var(--black);
 }
 
 .hero__subline {
@@ -375,7 +368,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: var(--gray-mid);
   margin-bottom: 3.5rem;
 }
 
@@ -386,17 +379,15 @@ a {
   flex-wrap: wrap;
 }
 
-/* Override ghost btn for dark hero background */
 .hero .btn--ghost {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.4);
+  color: var(--black);
+  border-color: var(--black);
 }
 .hero .btn--ghost::after {
-  background: rgba(255,255,255,0.1);
+  background: var(--black);
 }
 .hero .btn--ghost:hover {
   color: var(--white);
-  border-color: var(--white);
 }
 
 .hero__scroll {
@@ -413,7 +404,7 @@ a {
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: var(--gray-mid);
   writing-mode: vertical-lr;
 }
 
@@ -429,7 +420,7 @@ a {
    ========================================= */
 .who {
   padding: var(--spacing-xl) 3rem;
-  background-color: var(--black);
+  background-color: var(--orange);
   color: var(--white);
 }
 
@@ -443,7 +434,7 @@ a {
 }
 
 .who__text .section-label {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.6);
 }
 
 .who__title {
@@ -457,7 +448,7 @@ a {
 }
 .who__title em {
   font-style: italic;
-  color: var(--orange);
+  color: var(--black);
 }
 
 .who__body {
@@ -465,13 +456,14 @@ a {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.85);
   margin-bottom: 1.2rem;
 }
 .who__body--italic {
   font-style: italic;
-  color: var(--orange);
-  opacity: 0.9;
+  color: var(--white);
+  font-weight: 500;
+  opacity: 1;
 }
 
 .who__visual {
@@ -483,7 +475,7 @@ a {
 .who__logo-placeholder {
   width: 280px;
   height: 280px;
-  border: 1.5px solid rgba(255,84,0,0.3);
+  border: 1.5px solid rgba(255,255,255,0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -496,7 +488,7 @@ a {
   font-family: var(--font-headline);
   font-size: 4rem;
   font-weight: 800;
-  color: var(--orange);
+  color: var(--white);
   letter-spacing: 0.05em;
 }
 .who__logo-placeholder p {
@@ -504,12 +496,12 @@ a {
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.5);
   line-height: 1.8;
 }
 .who__logo-placeholder small {
   font-size: 0.6rem;
-  color: rgba(255,84,0,0.4);
+  color: rgba(255,255,255,0.35);
   font-style: italic;
   letter-spacing: 0;
   text-transform: none;
@@ -993,6 +985,19 @@ a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gray-mid);
+  margin-bottom: 0.15rem;
+}
+
+.merch-item__detail--available {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.merch-item__detail--soon {
+  color: var(--gray-mid);
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .merch__cta {

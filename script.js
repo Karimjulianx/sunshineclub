@@ -241,45 +241,47 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
 });
 
 
-// ── Previous Events Carousel ──────────────
+// ── Highlights Carousel ───────────────────
 (function() {
-  var cards      = Array.from(document.querySelectorAll('.prev-card'));
-  var dotsWrap   = document.getElementById('previousDots');
-  var btnBack    = document.getElementById('prevCarouselBack');
-  var btnNext    = document.getElementById('prevCarouselNext');
+  var track    = document.getElementById('highlightsTrack');
+  var dotsWrap = document.getElementById('hlDots');
+  var btnPrev  = document.getElementById('hlPrev');
+  var btnNext  = document.getElementById('hlNext');
 
-  if (!cards.length || !dotsWrap) return;
+  if (!track) return;
 
-  var perPage  = window.innerWidth <= 560 ? 1 : window.innerWidth <= 900 ? 2 : 3;
-  var pages    = Math.ceil(cards.length / perPage);
-  var current  = 0;
+  var slides  = Array.from(track.querySelectorAll('.highlight__slide'));
+  var total   = slides.length;
+  var current = 0;
 
   // Build dots
-  for (var i = 0; i < pages; i++) {
+  slides.forEach(function(_, i) {
     var dot = document.createElement('div');
-    dot.className = 'prev-dot' + (i === 0 ? ' active' : '');
-    dot.dataset.page = i;
+    dot.className = 'hl-dot' + (i === 0 ? ' active' : '');
+    dot.dataset.i = i;
     dotsWrap.appendChild(dot);
-  }
+  });
 
-  function show(page) {
-    current = (page + pages) % pages;
-    cards.forEach(function(c, idx) {
-      var inPage = idx >= current * perPage && idx < (current + 1) * perPage;
-      c.classList.toggle('active', inPage);
-    });
-    document.querySelectorAll('.prev-dot').forEach(function(d, idx) {
-      d.classList.toggle('active', idx === current);
+  function go(n) {
+    current = (n + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.hl-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
     });
   }
 
-  show(0);
-
-  btnNext.addEventListener('click', function() { show(current + 1); });
-  btnBack.addEventListener('click', function() { show(current - 1); });
-
+  btnNext.addEventListener('click', function() { go(current + 1); });
+  btnPrev.addEventListener('click', function() { go(current - 1); });
   dotsWrap.addEventListener('click', function(e) {
-    var dot = e.target.closest('.prev-dot');
-    if (dot) show(parseInt(dot.dataset.page));
+    var dot = e.target.closest('.hl-dot');
+    if (dot) go(parseInt(dot.dataset.i));
+  });
+
+  // Swipe support
+  var startX = 0;
+  track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) go(current + (diff > 0 ? 1 : -1));
   });
 })();

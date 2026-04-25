@@ -359,7 +359,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.8rem;
-  color: var(--black);
+  color: var(--orange);
 }
 
 .hero__subline {
@@ -662,7 +662,57 @@ a {
   color: var(--black);
 }
 
-/* ── Previous / Highlights ── */
+.upcoming__fact--full {
+  grid-column: 1 / -1;
+}
+.upcoming__fact--full .upcoming__fact-value {
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* What to Expect */
+.upcoming__expect {
+  margin-top: 2rem;
+}
+.upcoming__expect-divider {
+  height: 1px;
+  background: var(--gray-light);
+  margin-bottom: 1.5rem;
+}
+.upcoming__expect-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+.upcoming__expect-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 0;
+}
+.upcoming__expect-list li {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--black);
+  padding-left: 1.4rem;
+  position: relative;
+}
+.upcoming__expect-list li::before {
+  content: '☀';
+  position: absolute;
+  left: 0;
+  font-size: 0.55rem;
+  top: 0.4rem;
+  color: var(--orange);
+}
+
+
 .previous {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -784,7 +834,7 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.5);
   color: var(--white);
   border: none;
   width: 36px;
@@ -801,8 +851,10 @@ a {
 }
 .carousel__btn--prev { left: 0.8rem; }
 .carousel__btn--next { right: 0.8rem; }
-.merch-item--available:hover .carousel__btn { opacity: 1; }
-.carousel__btn:hover { background: rgba(255,84,0,0.7); }
+
+/* Show arrows on hover over the image wrap */
+.merch-item__img-wrap:hover .carousel__btn { opacity: 1; }
+.carousel__btn:hover { background: rgba(255,84,0,0.8); }
 
 /* ── Merch available tag + carousel + cta link ── */
 .merch-item--available .merch-item__img-wrap {
@@ -894,7 +946,7 @@ a {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: var(--spacing-lg);
 }
@@ -974,6 +1026,20 @@ a {
   font-style: italic;
   text-transform: none;
   letter-spacing: 0;
+}
+
+.merch__more {
+  max-width: var(--max-width);
+  margin: 0 auto var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--gray-mid);
+  line-height: 1.7;
+}
+.merch__more a {
+  color: var(--orange);
+  border-bottom: 1px solid var(--orange);
 }
 
 .merch__cta {

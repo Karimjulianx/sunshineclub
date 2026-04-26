@@ -1,62 +1,17 @@
 /* =========================================
    SUNSHINE CLUB — fonts.css
-   Self-hosted font declarations
+   Agrandir Wide Black (self-hosted)
    ========================================= */
 
-/* ── Agrandir (Headlines) ── */
 @font-face {
-  font-family: 'Agrandir';
-  src: url('fonts/Agrandir-GrandHeavy.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Agrandir';
-  src: url('fonts/Agrandir-WideBlackItalic.otf') format('opentype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Agrandir';
-  src: url('fonts/Agrandir-WideLight.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ── Trueno (Body text — Gotham replacement) ── */
-@font-face {
-  font-family: 'Trueno';
-  src: url('fonts/TruenoLt.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Trueno';
-  src: url('fonts/TruenoRg.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Trueno';
-  src: url('fonts/TruenoSBd.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Trueno';
-  src: url('fonts/TruenoBd.otf') format('opentype');
-  font-weight: 700;
+  font-family: 'Agrandir Wide';
+  src: url('fonts/PPAgrandir-WideBlack.eot');
+  src: url('fonts/PPAgrandir-WideBlack.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PPAgrandir-WideBlack.woff2') format('woff2'),
+       url('fonts/PPAgrandir-WideBlack.woff') format('woff'),
+       url('fonts/PPAgrandir-WideBlack.otf') format('opentype'),
+       url('fonts/PPAgrandir-WideBlack.ttf') format('truetype');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }

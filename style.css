@@ -549,9 +549,22 @@ a {
 
 .upcoming__flyer-img {
   position: relative;
-  aspect-ratio: 2 / 3;
   background-color: var(--black);
   overflow: hidden;
+}
+
+.upcoming__flyer-real {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.who__logo-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .upcoming__flyer-placeholder {

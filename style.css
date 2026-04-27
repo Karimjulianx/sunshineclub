@@ -350,7 +350,7 @@ a {
 
 .hero__title {
   font-family: var(--font-headline);
-  font-size: clamp(4.5rem, 13vw, 12rem);
+  font-size: clamp(3rem, 11vw, 12rem);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: 0.02em;
@@ -361,21 +361,23 @@ a {
   margin-bottom: 1.8rem;
   color: var(--orange);
   word-spacing: normal;
+  width: 100%;
+  text-align: center;
+}
+
+.hero__subline {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 3.5rem;
 }
 
 .hero__title--agrandir {
   font-family: 'Agrandir Wide', 'Cabinet Grotesk', 'Arial Black', sans-serif;
   font-weight: 800;
-}
-
-
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gray-mid);
-  margin-bottom: 3.5rem;
 }
 
 .hero__actions {
@@ -1576,6 +1578,7 @@ a {
 
 @media (max-width: 560px) {
   .hero__scroll { display: none; }
+  .hero__title { font-size: clamp(2.8rem, 18vw, 5rem); }
 
   .previous__carousel {
     grid-template-columns: 1fr;

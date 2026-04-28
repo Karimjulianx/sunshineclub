@@ -166,16 +166,18 @@ a {
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 1rem 2.2rem;
+  padding: 0.75rem 1.8rem;
   border: 1.5px solid var(--black);
   cursor: pointer;
   transition: background-color var(--transition), color var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
+  width: auto;
+  max-width: none;
 }
 
 .btn::after {
@@ -223,9 +225,16 @@ a {
 }
 
 .btn--large {
-  font-size: 0.82rem;
-  padding: 1.2rem 3rem;
+  font-size: 0.78rem;
+  padding: 0.9rem 2.4rem;
 }
+
+/* Slim variant for inline use */
+.btn--slim {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.68rem;
+}
+
 
 /* =========================================
    NAV
@@ -671,7 +680,7 @@ a {
 .upcoming__fact-label {
   font-family: var(--font-body);
   font-size: 0.6rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gray-mid);
 }
@@ -702,10 +711,10 @@ a {
 }
 .upcoming__expect-label {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--gray-mid);
   margin-bottom: 1rem;
 }
 .upcoming__expect-list {
@@ -1580,19 +1589,17 @@ a {
   .hero__scroll { display: none; }
   .hero__title { font-size: clamp(2.8rem, 18vw, 5rem); }
 
-  .previous__carousel {
-    grid-template-columns: 1fr;
-  }
-
+  .previous__carousel { grid-template-columns: 1fr; }
   .merch__grid { grid-template-columns: 1fr; }
 
-  .hero__actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  .btn {
+  /* Only hero action buttons go full width on mobile */
+  .hero__actions .btn {
     width: 100%;
     max-width: 280px;
     text-align: center;
+  }
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -4,6 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunshine Club — Vienna</title>
+  <meta name="description" content="Sunshine Club ist eine Reihe kuratierter Social Gatherings aus Wien — gute Energie, gute Company, Events, die etwas bedeuten." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sunshine Club" />
+  <meta property="og:title" content="Sunshine Club — Vienna" />
+  <meta property="og:description" content="Sunshine Club ist eine Reihe kuratierter Social Gatherings aus Wien — gute Energie, gute Company, Events, die etwas bedeuten." />
+  <meta property="og:image" content="https://sunshineclub.at/img/events/flyer-vol3-26.png" />
+  <meta property="og:url" content="https://sunshineclub.at/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sunshine Club — Vienna" />
+  <meta name="twitter:description" content="Sunshine Club ist eine Reihe kuratierter Social Gatherings aus Wien — gute Energie, gute Company, Events, die etwas bedeuten." />
+  <meta name="twitter:image" content="https://sunshineclub.at/img/events/flyer-vol3-26.png" />
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="fonts.css" />
@@ -22,7 +36,23 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://events.tickethead.io/tickethead/event/4283" target="_blank" class="nav__cta">Tickets ↗</a>
+    <button class="nav__burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <ul class="nav-mobile__links">
+      <li><a href="#who-we-are">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#" id="navOracleMobile">Oracle</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://events.tickethead.io/tickethead/event/4283" target="_blank" class="btn btn--primary nav-mobile__cta">Get Tickets ↗</a>
+    <a href="https://www.instagram.com/sunshine___club/" target="_blank" class="nav-mobile__instagram">Instagram ↗</a>
+  </div>
 
   <!-- Hero -->
   <section class="hero" id="hero">

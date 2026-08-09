@@ -9,6 +9,29 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
+// ── Mobile menu toggle ────────────────────
+const navBurger = document.getElementById('navBurger');
+const navMobile = document.getElementById('navMobile');
+
+function closeMobileMenu() {
+  navBurger.setAttribute('aria-expanded', 'false');
+  navMobile.classList.remove('open');
+  navMobile.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+navBurger.addEventListener('click', () => {
+  const isOpen = navMobile.classList.toggle('open');
+  navBurger.setAttribute('aria-expanded', String(isOpen));
+  navMobile.setAttribute('aria-hidden', String(!isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+navMobile.querySelectorAll('a').forEach((link) => {
+  if (link.id !== 'navOracleMobile') link.addEventListener('click', closeMobileMenu);
+});
+
+
 // ── Scroll-triggered reveal ───────────────
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -146,6 +169,7 @@ const optionsEl  = document.getElementById('oracleOptions');
 const againWrap  = document.getElementById('oracleAgainWrap');
 const againBtn   = document.getElementById('oracleAgain');
 const navOracle  = document.getElementById('navOracle');
+const navOracleMobile = document.getElementById('navOracleMobile');
 
 let cachedCity  = null;
 let currentType = null;
@@ -164,6 +188,7 @@ function closePopup() {
 
 fab.addEventListener('click', openPopup);
 if (navOracle) navOracle.addEventListener('click', (e) => { e.preventDefault(); openPopup(); });
+if (navOracleMobile) navOracleMobile.addEventListener('click', (e) => { e.preventDefault(); closeMobileMenu(); openPopup(); });
 closeBtn.addEventListener('click', closePopup);
 backdrop.addEventListener('click', closePopup);
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
